@@ -73,6 +73,11 @@ steps:
       codeCoverageTool: "cobertura"
       summaryFileLocation: "$(Build.SourcesDirectory)/**/coverage.cobertura.xml"
 
+  - task: WhiteSource@21
+    inputs:
+      cwd: '$(System.DefaultWorkingDirectory)'
+      projectName: 'TailSping Game Web'
+
   - task: DotNetCoreCLI@2
     displayName: "Publish the project - $(buildConfiguration)"
     inputs:
