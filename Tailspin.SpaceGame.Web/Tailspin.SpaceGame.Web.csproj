@@ -7,7 +7,7 @@
 
   <!-- reference to the artifact feed -->
   <ItemGroup>
-    <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.0.0-CI-20240320-012920" />
+    <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.1.0-CI-20240320-045440" />
   </ItemGroup>
 
   <ItemGroup>
