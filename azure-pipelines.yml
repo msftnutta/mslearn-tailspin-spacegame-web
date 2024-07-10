@@ -2,6 +2,7 @@ trigger:
   - "*"
 
 pool:
+  # use my agent linux from Azure vm in Australia
   name: 'MyAgentPool'
   demands:
     - npm
