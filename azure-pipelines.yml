@@ -2,7 +2,7 @@ trigger:
   - "*"
 
 pool:
-  # use my agent linux from Azure vm in Australia East
+  # use my agent linux from Azure vm in Australia
   name: 'MyAgentPool'
   demands:
     - npm
@@ -73,6 +73,11 @@ steps:
     inputs:
       codeCoverageTool: "cobertura"
       summaryFileLocation: "$(Build.SourcesDirectory)/**/coverage.cobertura.xml"
+
+  - task: WhiteSource@21
+    inputs:
+      cwd: '$(System.DefaultWorkingDirectory)'
+      projectName: 'TailSping Game Web'
 
   - task: DotNetCoreCLI@2
     displayName: "Publish the project - $(buildConfiguration)"
