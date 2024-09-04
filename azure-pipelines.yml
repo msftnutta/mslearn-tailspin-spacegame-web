@@ -2,7 +2,7 @@ trigger:
   - "*"
 
 pool:
-  # use my agent linux from Azure vm in Australia
+  # use my agent linux from Azure vm in Australia East
   name: 'MyAgentPool'
   demands:
     - npm
