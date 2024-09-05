@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/devops-contoso/Space%20Game%20-%20web%20-%20Pipeline/_apis/build/status%2Fmsftnutta.mslearn-tailspin-spacegame-web?branchName=build-pipeline)](https://dev.azure.com/devops-contoso/Space%20Game%20-%20web%20-%20Pipeline/_build/latest?definitionId=2&branchName=build-pipeline)
+[![Build Status](https://dev.azure.com/devops-contoso/Space%20Game%20-%20web%20-%20Pipeline/_apis/build/status%2Fmsftnutta.mslearn-tailspin-spacegame-web?branchName=main)](https://dev.azure.com/devops-contoso/Space%20Game%20-%20web%20-%20Pipeline/_build/latest?definitionId=2&branchName=main)
 
 # Contributing
 
