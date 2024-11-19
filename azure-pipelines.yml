@@ -2,9 +2,10 @@ trigger:
   - "*"
   
 pool:
-  vmImage: 'ubuntu-20.04'
+  # use my agent linux from Azure vm in Australia East
+  name: 'MyAgentPool'
   demands:
-  - npm
+    - npm
 
 variables:
   buildConfiguration: "Release"
