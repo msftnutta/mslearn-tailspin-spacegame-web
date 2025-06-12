@@ -10,8 +10,14 @@ variables:
   buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '8.x'
+  nodeVersion: '16.x'
 
 steps:
+- task: NodeTool@0
+  displayName: 'Use Node.js $(nodeVersion)'
+  inputs:
+    versionSpec: '$(nodeVersion)'
+
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
@@ -26,7 +32,12 @@ steps:
   inputs:
     verbose: false
 
-- script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
+- script: |
+    if [ -f "./node_modules/.bin/sass" ]; then
+      ./node_modules/.bin/sass $(wwwrootDir):$(wwwrootDir) --style=compressed
+    else
+      ./node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)
+    fi
   displayName: 'Compile Sass assets'
 
 - task: gulp@1
