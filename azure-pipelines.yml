@@ -1,14 +1,13 @@
 trigger:
-- '*'
-
-# This section defines the build agent pool configuration.
-# 'vmImage' specifies the virtual machine image to use for the agent; here, 'ubuntu-20.04' is selected.
-# 'demands' ensures that the agent has 'npm' installed before running any jobs.
+  - "*"
+  
 pool:
-  # vmImage: 'ubuntu-22.04'
-  name: 'MyAgentPool'
+  # use my agent linux from Azure vm in Australia East
+  # name: 'MyAgentPool'
+  # vmImage
+  vmImage: 'ubuntu-24.04'
   demands:
-  - npm
+    - npm
 
 variables:
   buildConfiguration: 'Release'
@@ -26,8 +25,8 @@ steps:
   inputs:
     verbose: false
 
-- script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
-  displayName: 'Compile Sass assets'
+- script: "./node_modules/.bin/sass $(wwwrootDir):$(wwwrootDir) --no-source-map"
+  displayName: "Compile Sass assets"
 
 - task: gulp@1
   displayName: 'Run gulp tasks'
