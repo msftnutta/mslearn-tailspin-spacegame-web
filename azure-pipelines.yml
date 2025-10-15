@@ -15,6 +15,11 @@ variables:
   dotnetSdkVersion: "6.x"
 
 steps:
+  - task: NodeTool@0
+    displayName: 'Use Node.js 18.x'
+    inputs:
+      versionSpec: '18.x'
+
   - task: UseDotNet@2
     displayName: "Use .NET SDK $(dotnetSdkVersion)"
     inputs:
@@ -25,7 +30,7 @@ steps:
     inputs:
       verbose: false
 
-  - script: "./node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)"
+  - script: "./node_modules/.bin/sass $(wwwrootDir):$(wwwrootDir) --no-source-map"
     displayName: "Compile Sass assets"
 
   - task: gulp@1
