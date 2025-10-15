@@ -3,7 +3,9 @@ trigger:
   
 pool:
   # use my agent linux from Azure vm in Australia East
-  name: 'MyAgentPool'
+  # name: 'MyAgentPool'
+  # vmImage
+  vmImage: 'ubuntu-24.04'
   demands:
     - npm
 
