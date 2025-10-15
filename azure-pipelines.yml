@@ -5,7 +5,8 @@ trigger:
 # 'vmImage' specifies the virtual machine image to use for the agent; here, 'ubuntu-20.04' is selected.
 # 'demands' ensures that the agent has 'npm' installed before running any jobs.
 pool:
-  vmImage: 'ubuntu-22.04'
+  # vmImage: 'ubuntu-22.04'
+  name: 'MyAgentPool'
   demands:
   - npm
 
