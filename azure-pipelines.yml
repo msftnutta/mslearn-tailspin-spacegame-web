@@ -89,3 +89,9 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
+
+  # add medn bolt
+  
+- task: mend@21
+  inputs:
+    cwd: '$(System.DefaultWorkingDirectory)'
