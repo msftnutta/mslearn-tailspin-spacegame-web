@@ -90,8 +90,6 @@ steps:
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
 
-  # add medn bolt
-  
-- task: mend@21
-  inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
+# Mend Bolt (free) security scanning
+- task: WhiteSource@21
+  displayName: 'Mend Bolt Security Scan'
