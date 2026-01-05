@@ -1,5 +1,5 @@
 trigger:
-  - "*"
+  - "main"
   
 pool:
   # use my agent linux from Azure vm in Australia East
@@ -65,3 +65,4 @@ steps:
   - task: PublishBuildArtifacts@1
     displayName: "Publish Artifact: drop"
     condition: succeeded()
+
